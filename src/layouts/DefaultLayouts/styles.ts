@@ -1,0 +1,13 @@
+import styled from 'styled-components'
+
+export const LayoutContainer = styled.div`
+  flex: 1;
+  max-width: 74rem;
+  height:auto;
+  margin: 1rem auto;
+  padding: 2.5rem;
+  background: ${(props) => props.theme.white};
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+`
