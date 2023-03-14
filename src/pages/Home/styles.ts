@@ -40,23 +40,33 @@ export const LandingItensWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+
 `;
 
-export const LandingItemText = styled.p`
+export const LandingItem = styled.p`
   flex-basis: 50%;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 2rem;
-  
-  svg{
-    height: 2rem;
-    width: 2rem;
-    font-size: 1rem;
-  }
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-top: 1rem;
 `;
 
-export const LandingItemCartIcon = styled(ShoppingCart)`
-  background: ${(props) => props.theme["yellow-900"]};
-  color: ${(props) => props.theme.white};
+export const LandingItemSpan = styled.div`
+  display: flex;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
+  background: ${(props) => props.theme["yellow-900"]};
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 1rem;
+    width: 1rem;
+    font-size: 1rem;
+    color: ${(props) => props.theme["white"]};
+  }
 `;
