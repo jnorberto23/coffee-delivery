@@ -22,27 +22,27 @@ export function Home() {
         </LandingSubText>
         <LandingItensWrapper>
           <LandingItem>
-            <LandingItemSpan>
+            <LandingItemSpan color="dark-yellow">
               <ShoppingCart size={25} weight="fill" />
             </LandingItemSpan>
             Compra simples e segura
           </LandingItem>
           <LandingItem>
-            <LandingItemSpan>
+            <LandingItemSpan color="grey">
               <Package size={25} weight="fill" />
             </LandingItemSpan>
             Embalagem mantém o café intacto
           </LandingItem>
 
           <LandingItem>
-            <LandingItemSpan>
+            <LandingItemSpan color="mid-yellow">
               <Timer size={25} weight="fill" />
             </LandingItemSpan>
             Entrega rápida e rastreada
           </LandingItem>
 
           <LandingItem>
-            <LandingItemSpan>
+            <LandingItemSpan color="dark-purple">
               <Coffee size={25} weight="fill" />
             </LandingItemSpan>
             O café chega fresquinho até você

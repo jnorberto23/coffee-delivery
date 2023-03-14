@@ -1,13 +1,20 @@
-import { ShoppingCart } from "phosphor-react";
 import styled from "styled-components";
 
+export type spanVariant =
+  | "mid-yellow"
+  | "dark-yellow"
+  | "grey"
+  | "dark-purple";
+
+interface SpanProps {
+  color: spanVariant;
+}
 export const LandingContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: 70vh;
-  /* filter: blur(80px); */
 `;
 
 export const LandingTextWrapper = styled.div`
@@ -40,7 +47,6 @@ export const LandingItensWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-
 `;
 
 export const LandingItem = styled.p`
@@ -54,12 +60,12 @@ export const LandingItem = styled.p`
   margin-top: 1rem;
 `;
 
-export const LandingItemSpan = styled.div`
+export const LandingItemSpan = styled.span<SpanProps>`
   display: flex;
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  background: ${(props) => props.theme["yellow-900"]};
+  background: ${(props) => props.theme[props.color]};
   align-items: center;
   justify-content: center;
 

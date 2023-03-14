@@ -24,12 +24,12 @@ export const CartButton = styled.button`
   margin: auto;
   width: 3rem;
   height: 2.5rem;
-  background-color: ${(props) => props.theme["yellow-100"]};
+  background-color: ${(props) => props.theme["light-yellow"]};
   border: none;
   border-radius: 10px;
 
   svg{
-    color:${(props) => props.theme["yellow-900"]};
+    color:${(props) => props.theme["dark-yellow"]};
   }
 `;
 
@@ -38,8 +38,8 @@ export const RegionSpan = styled.span`
   align-items: center;
   height: 2.5rem;
   padding: 1rem;
-  background-color: ${(props) => props.theme["purple-100"]};
-  color:  ${(props) => props.theme["purple-900"]};
+  background-color: ${(props) => props.theme["light-purple"]};
+  color:  ${(props) => props.theme["dark-purple"]};
   border-radius: 10px;
 
   svg{
