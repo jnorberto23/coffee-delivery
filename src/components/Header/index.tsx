@@ -11,11 +11,11 @@ export function Header() {
             </div>
             <RegionAndCartContainer>
                 <RegionSpan>
-                    <MapPin size={25} weight="fill"/>
-                    Pindamonhangaba
+                    <MapPin size={22} weight="fill"/>
+                    Pindamonhangaba, SP
                 </RegionSpan>
                 <CartButton>
-                    <ShoppingCart size={25} weight="fill"/>
+                    <ShoppingCart size={22} weight="fill"/>
                 </CartButton>
             </RegionAndCartContainer>
         </HeaderContainer>

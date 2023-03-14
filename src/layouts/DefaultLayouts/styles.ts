@@ -4,8 +4,8 @@ export const LayoutContainer = styled.div`
   flex: 1;
   max-width: 74rem;
   height:auto;
-  margin: 1rem auto;
-  padding: 2.5rem;
+  margin: 0 auto;
+  padding: 2rem;
   background: ${(props) => props.theme.white};
   border-radius: 8px;
   display: flex;
