@@ -23,9 +23,9 @@ export const CartButton = styled.button`
   padding: auto;
   margin: auto;
   width: 3rem;
-  height: 3rem;
+  height: 2.5rem;
   background-color: ${(props) => props.theme["yellow-100"]};
-  border: 1px solid ${(props) => props.theme["yellow-900"]};
+  border: none;
   border-radius: 10px;
 
   svg{
@@ -34,8 +34,11 @@ export const CartButton = styled.button`
 `;
 
 export const RegionSpan = styled.span`
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 1rem;
   background-color: ${(props) => props.theme["purple-100"]};
-  border: 1px solid ${(props) => props.theme["purple-900"]};
   color:  ${(props) => props.theme["purple-900"]};
   border-radius: 10px;
 
