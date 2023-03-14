@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   background-color: ${(props) => props.theme["white"]};
-  margin: auto;
+  margin:  auto;
+  margin-bottom: 1rem;
   padding: auto;
   width: 100%;
   display: flex;
@@ -15,7 +16,7 @@ export const RegionAndCartContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 `;
 
 export const CartButton = styled.button`

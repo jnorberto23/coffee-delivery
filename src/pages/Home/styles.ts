@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export type spanVariant =
-  | "mid-yellow"
-  | "dark-yellow"
-  | "grey"
-  | "dark-purple";
+export type spanVariant = "mid-yellow" | "dark-yellow" | "grey" | "dark-purple";
 
 interface SpanProps {
   color: spanVariant;
@@ -52,7 +48,7 @@ export const LandingItensWrapper = styled.div`
 `;
 
 export const LandingItem = styled.p`
-  flex-basis:content;
+  flex-basis: content;
   font-style: normal;
   font-size: 1rem;
   line-height: 2rem;
@@ -80,8 +76,10 @@ export const LandingItemSpan = styled.span<SpanProps>`
 `;
 
 export const LandingImageWrapper = styled.div`
+  padding: auto;
+  margin: auto;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: flex-end;
   flex: 1;
 `;
