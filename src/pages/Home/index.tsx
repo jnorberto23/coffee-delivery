@@ -7,7 +7,9 @@ import {
   LandingMainText,
   LandingSubText,
   LandingTextWrapper,
+  LandingImageWrapper,
 } from "./styles";
+import LandingImage from '../../assets/landing-image.png'
 
 export function Home() {
   return (
@@ -49,7 +51,9 @@ export function Home() {
           </LandingItem>
         </LandingItensWrapper>
       </LandingTextWrapper>
-      <LandingTextWrapper />
+      <LandingImageWrapper>
+        <img src={LandingImage} alt="" />
+      </LandingImageWrapper>
     </LandingContainer>
   );
 }

@@ -13,8 +13,9 @@ export const LandingContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  height: 70vh;
+  justify-content: center;
+  height: 80vh;
+  flex-wrap: wrap;
 `;
 
 export const LandingTextWrapper = styled.div`
@@ -28,9 +29,8 @@ export const LandingTextWrapper = styled.div`
 
 export const LandingMainText = styled.h1`
   font-family: "Baloo 2";
-  font-style: normal;
   font-weight: 900;
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 3rem;
 `;
 
@@ -45,18 +45,20 @@ export const LandingItensWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: last baseline;
+  gap: 1rem;
+  margin-top: 20px;
 `;
 
 export const LandingItem = styled.p`
-  flex-basis: 50%;
+  flex-basis:content;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 2rem;
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: 1rem;
 `;
 
@@ -75,4 +77,11 @@ export const LandingItemSpan = styled.span<SpanProps>`
     font-size: 1rem;
     color: ${(props) => props.theme["white"]};
   }
+`;
+
+export const LandingImageWrapper = styled.div`
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  flex: 1;
 `;
