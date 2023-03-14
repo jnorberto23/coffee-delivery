@@ -1,5 +1,9 @@
+import { ShoppingCart } from "phosphor-react";
 import {
   LandingContainer,
+  LandingItemCartIcon,
+  LandingItemText,
+  LandingItensWrapper,
   LandingMainText,
   LandingSubText,
   LandingTextWrapper,
@@ -16,6 +20,15 @@ export function Home() {
           Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
           hora
         </LandingSubText>
+        <LandingItensWrapper>
+          <LandingItemText>
+            <LandingItemCartIcon size={25} weight="fill" />
+            Compra simples e segura
+          </LandingItemText>
+          <LandingItemText>Embalagem mantém o café intacto</LandingItemText>
+          <LandingItemText>Compra simples e segura</LandingItemText>
+          <LandingItemText>Embalagem mantém o café intacto</LandingItemText>
+        </LandingItensWrapper>
       </LandingTextWrapper>
       <LandingTextWrapper />
     </LandingContainer>
