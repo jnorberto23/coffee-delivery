@@ -84,18 +84,38 @@ export const LandingImageWrapper = styled.div`
   flex: 1;
 `;
 
-export const CoffeeList = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 80vh;
-  flex-wrap: wrap;
-`;
 export const CoffeeListText = styled.p`
   font-family: "Baloo 2";
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 1000;
+  margin-bottom: 3rem;
+`;
+
+export const CoffeeList = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 80vh;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
+
+export const CoffeeCard = styled.div`
+  flex-basis: auto;
+  width: 16rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  flex-wrap: wrap;
+  background: ${(props) => props.theme["base-card"]};
+  border-radius: 5px 30px 5px 30px;
+
+  img{
+    margin-top: -5rem;
+  }
 `;
 

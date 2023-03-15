@@ -10,9 +10,11 @@ import {
   LandingImageWrapper,
   CoffeeList,
   CoffeeListText,
+  CoffeeCard,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
+import { TradicionalExpress } from "../../assets/coffees";
 
 export function Home() {
   return (
@@ -60,8 +62,24 @@ export function Home() {
         </LandingImageWrapper>
       </LandingContainer>
 
+      <CoffeeListText>Nossos cafés</CoffeeListText>
+
       <CoffeeList>
-        <CoffeeListText>Nossos cafés</CoffeeListText>
+        <CoffeeCard>
+          <img src={TradicionalExpress} alt="" />
+        </CoffeeCard>
+        <CoffeeCard>
+          <img src={TradicionalExpress} alt="" />
+        </CoffeeCard>
+        <CoffeeCard>
+          <img src={TradicionalExpress} alt="" />
+        </CoffeeCard>
+        <CoffeeCard>
+          <img src={TradicionalExpress} alt="" />
+        </CoffeeCard>
+        <CoffeeCard>
+          <img src={TradicionalExpress} alt="" />
+        </CoffeeCard>
       </CoffeeList>
     </Fragment>
   );
