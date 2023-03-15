@@ -83,3 +83,19 @@ export const LandingImageWrapper = styled.div`
   justify-content: flex-end;
   flex: 1;
 `;
+
+export const CoffeeList = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 80vh;
+  flex-wrap: wrap;
+`;
+export const CoffeeListText = styled.p`
+  font-family: "Baloo 2";
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 1000;
+`;
+
