@@ -11,6 +11,8 @@ import {
   CoffeeList,
   CoffeeListText,
   CoffeeCard,
+  CoffeeCardTagWrapper,
+  CoffeeCardTag,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
@@ -67,18 +69,34 @@ export function Home() {
       <CoffeeList>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
+          <CoffeeCardTagWrapper>
+            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
+          </CoffeeCardTagWrapper>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
+          <CoffeeCardTagWrapper>
+            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
+          </CoffeeCardTagWrapper>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
+          <CoffeeCardTagWrapper>
+            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
+            <CoffeeCardTag>COM LEITE</CoffeeCardTag>
+          </CoffeeCardTagWrapper>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
+          <CoffeeCardTagWrapper>
+            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
+          </CoffeeCardTagWrapper>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
+          <CoffeeCardTagWrapper>
+            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
+          </CoffeeCardTagWrapper>
         </CoffeeCard>
       </CoffeeList>
     </Fragment>

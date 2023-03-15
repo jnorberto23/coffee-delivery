@@ -106,7 +106,7 @@ export const CoffeeCard = styled.div`
   flex-basis: auto;
   width: 16rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 20vh;
@@ -114,8 +114,25 @@ export const CoffeeCard = styled.div`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 5px 30px 5px 30px;
 
-  img{
+  img {
     margin-top: -5rem;
   }
 `;
+export const CoffeeCardTagWrapper = styled.div`
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+`;
 
+export const CoffeeCardTag = styled.span`
+  font-size: 0.7rem;
+  font-weight: 900;
+  background: ${(props) => props.theme["light-yellow"]};
+  color: ${(props) => props.theme["dark-yellow"]};
+  padding: 0.3rem;
+  border-radius: 10px;
+`;
