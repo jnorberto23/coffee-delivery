@@ -13,6 +13,8 @@ import {
   CoffeeCard,
   CoffeeCardTagWrapper,
   CoffeeCardTag,
+  CoffeeCardMainText,
+  CoffeeCardSubText,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
@@ -78,6 +80,8 @@ export function Home() {
           <CoffeeCardTagWrapper>
             <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
           </CoffeeCardTagWrapper>
+          <CoffeeCardMainText>Expresso Tradicional</CoffeeCardMainText>
+          <CoffeeCardSubText>Expresso diluído, menos intenso que o tradicional</CoffeeCardSubText>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />

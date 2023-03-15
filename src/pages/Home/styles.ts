@@ -109,17 +109,16 @@ export const CoffeeCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: auto;
   flex-wrap: wrap;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 5px 30px 5px 30px;
-
+  gap: 1rem;
   img {
     margin-top: -5rem;
   }
 `;
 export const CoffeeCardTagWrapper = styled.div`
-  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -135,4 +134,14 @@ export const CoffeeCardTag = styled.span`
   color: ${(props) => props.theme["dark-yellow"]};
   padding: 0.3rem;
   border-radius: 10px;
+`;
+
+export const CoffeeCardMainText = styled.p`
+  font-family: "Baloo 2";
+  font-size: 1.2rem;
+  font-weight: 900;
+`;
+
+export const CoffeeCardSubText = styled.p`
+  font-size: 0.8rem;
 `;
