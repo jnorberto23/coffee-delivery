@@ -113,9 +113,9 @@ export const CoffeeCard = styled.div`
   flex-wrap: wrap;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 5px 30px 5px 30px;
-  gap: 1rem;
+  gap: 0.7rem;
   img {
-    margin-top: -5rem;
+    margin-top: -3rem;
   }
 `;
 export const CoffeeCardTagWrapper = styled.div`
@@ -136,7 +136,7 @@ export const CoffeeCardTag = styled.span`
   border-radius: 10px;
 `;
 
-export const CoffeeCardMainText = styled.p`
+export const CoffeeCardMainText = styled.b`
   font-family: "Baloo 2";
   font-size: 1.2rem;
   font-weight: 900;
@@ -144,4 +144,35 @@ export const CoffeeCardMainText = styled.p`
 
 export const CoffeeCardSubText = styled.p`
   font-size: 0.8rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 130%;
+`;
+
+export const CoffeeCardFooterWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+`;
+
+
+export const CoffeeCardFooterPrice = styled.span`
+  font-family: "Baloo 2";
+  font-size: 1.2rem;
+  font-weight: 900;
+`;
+
+export const CoffeeCardFooterCounter = styled.span`
+  font-family: "Baloo 2";
+  font-size: 1.2rem;
+  font-weight: 900;
+`;
+
+export const CoffeeCardFooterButtonCart = styled.button`
+  font-family: "Baloo 2";
+  font-size: 1.2rem;
+  font-weight: 900;
 `;

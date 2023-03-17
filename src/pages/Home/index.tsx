@@ -15,6 +15,8 @@ import {
   CoffeeCardTag,
   CoffeeCardMainText,
   CoffeeCardSubText,
+  CoffeeCardFooterWrapper,
+  CoffeeCardFooterPrice,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
@@ -82,6 +84,11 @@ export function Home() {
           </CoffeeCardTagWrapper>
           <CoffeeCardMainText>Expresso Tradicional</CoffeeCardMainText>
           <CoffeeCardSubText>Expresso diluído, menos intenso que o tradicional</CoffeeCardSubText>
+          <CoffeeCardFooterWrapper>
+            <CoffeeCardFooterPrice>
+              R$ 9,99
+            </CoffeeCardFooterPrice>
+          </CoffeeCardFooterWrapper>
         </CoffeeCard>
         <CoffeeCard>
           <img src={TradicionalExpress} alt="" />
