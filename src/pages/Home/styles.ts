@@ -165,10 +165,36 @@ export const CoffeeCardFooterPrice = styled.span`
   font-weight: 900;
 `;
 
-export const CoffeeCardFooterCounter = styled.span`
+export const CoffeeCardFooterCounterWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content:"center"
+`;
+
+export const CoffeeCardFooterCounterButton = styled.button`
   font-family: "Baloo 2";
   font-size: 1.2rem;
   font-weight: 900;
+  color: ${(props) => props.theme["pink"]};
+  width: 2rem;
+  height: auto;
+  padding: 0.1rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 1px;
+  background-color: ${(props) => props.theme["light-grey"]};;
+`;
+
+export const CoffeeCardFooterCounterSpan = styled.span`
+padding: auto;
+  font-family: "Baloo 2";
+  font-weight: 900;
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1px;
+  background-color: ${(props) => props.theme["light-grey"]}
 `;
 
 export const CoffeeCardFooterButtonCart = styled.button`

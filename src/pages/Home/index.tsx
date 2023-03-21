@@ -17,6 +17,9 @@ import {
   CoffeeCardSubText,
   CoffeeCardFooterWrapper,
   CoffeeCardFooterPrice,
+  CoffeeCardFooterCounterWrapper,
+  CoffeeCardFooterCounterButton,
+  CoffeeCardFooterCounterSpan,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
@@ -88,6 +91,11 @@ export function Home() {
             <CoffeeCardFooterPrice>
               R$ 9,99
             </CoffeeCardFooterPrice>
+           <CoffeeCardFooterCounterWrapper>
+            <CoffeeCardFooterCounterButton>-</CoffeeCardFooterCounterButton>
+            <CoffeeCardFooterCounterSpan>0</CoffeeCardFooterCounterSpan>
+            <CoffeeCardFooterCounterButton>+</CoffeeCardFooterCounterButton>
+           </CoffeeCardFooterCounterWrapper>
           </CoffeeCardFooterWrapper>
         </CoffeeCard>
         <CoffeeCard>

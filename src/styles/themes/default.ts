@@ -1,6 +1,7 @@
 export const defaultTheme = {
   'white': '#FAFAFA',
   'grey': '#574F4D',
+  'light-grey': '#E6E5E5',
   'light-yellow': '#F1E9C9',
   'mid-yellow': '#DBAC2C',
   'dark-yellow': '#C47F17',
