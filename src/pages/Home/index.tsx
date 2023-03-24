@@ -1,10 +1,7 @@
 import {
   Coffee,
-  Minus,
   Package,
-  Plus,
   ShoppingCart,
-  ShoppingCartSimple,
   Timer,
 } from "phosphor-react";
 import {
@@ -18,21 +15,10 @@ import {
   LandingImageWrapper,
   CoffeeList,
   CoffeeListText,
-  CoffeeCard,
-  CoffeeCardTagWrapper,
-  CoffeeCardTag,
-  CoffeeCardMainText,
-  CoffeeCardSubText,
-  CoffeeCardFooterWrapper,
-  CoffeeCardFooterPrice,
-  CoffeeCardFooterCounterWrapper,
-  CoffeeCardFooterCounterButton,
-  CoffeeCardFooterCounterSpan,
-  CoffeeCardFooterButtonCart,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
-import { TradicionalExpress } from "../../assets/coffees";
+import { CoffeeItem } from "../components/Coffee";
 
 export function Home() {
   return (
@@ -83,57 +69,15 @@ export function Home() {
       <CoffeeListText>Nossos cafés</CoffeeListText>
 
       <CoffeeList>
-        <CoffeeCard>
-          <img src={TradicionalExpress} alt="" />
-          <CoffeeCardTagWrapper>
-            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
-          </CoffeeCardTagWrapper>
-        </CoffeeCard>
-        <CoffeeCard>
-          <img src={TradicionalExpress} alt="" />
-          <CoffeeCardTagWrapper>
-            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
-          </CoffeeCardTagWrapper>
-          <CoffeeCardMainText>Expresso Tradicional</CoffeeCardMainText>
-          <CoffeeCardSubText>
-            Expresso diluído, menos intenso que o tradicional
-          </CoffeeCardSubText>
-          <CoffeeCardFooterWrapper>
-            <CoffeeCardFooterPrice>R$ 9,99</CoffeeCardFooterPrice>
-            <CoffeeCardFooterCounterWrapper>
-              <CoffeeCardFooterCounterButton>
-                <Minus />
-              </CoffeeCardFooterCounterButton>
-              <CoffeeCardFooterCounterSpan>0</CoffeeCardFooterCounterSpan>
-              <CoffeeCardFooterCounterButton>
-                <Plus />
-              </CoffeeCardFooterCounterButton>
-            </CoffeeCardFooterCounterWrapper>
-            <CoffeeCardFooterButtonCart>
-              <ShoppingCartSimple weight="fill" />
-            </CoffeeCardFooterButtonCart>
-          </CoffeeCardFooterWrapper>
-        </CoffeeCard>
-        <CoffeeCard>
-          <img src={TradicionalExpress} alt="" />
-          <CoffeeCardTagWrapper>
-            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
-            <CoffeeCardTag>COM LEITE</CoffeeCardTag>
-          </CoffeeCardTagWrapper>
-        </CoffeeCard>
-        <CoffeeCard>
-          <img src={TradicionalExpress} alt="" />
-          <CoffeeCardTagWrapper>
-            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
-          </CoffeeCardTagWrapper>
-        </CoffeeCard>
-        <CoffeeCard>
-          <img src={TradicionalExpress} alt="" />
-          <CoffeeCardTagWrapper>
-            <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
-          </CoffeeCardTagWrapper>
-        </CoffeeCard>
+        <CoffeeItem />
+        <CoffeeItem />
+        <CoffeeItem />
+        <CoffeeItem />
+        <CoffeeItem />
+        <CoffeeItem />
+
       </CoffeeList>
+
     </Fragment>
   );
 }
