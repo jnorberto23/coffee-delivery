@@ -1,4 +1,12 @@
-import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import {
+  Coffee,
+  Minus,
+  Package,
+  Plus,
+  ShoppingCart,
+  ShoppingCartSimple,
+  Timer,
+} from "phosphor-react";
 import {
   LandingContainer,
   LandingItemSpan,
@@ -20,6 +28,7 @@ import {
   CoffeeCardFooterCounterWrapper,
   CoffeeCardFooterCounterButton,
   CoffeeCardFooterCounterSpan,
+  CoffeeCardFooterButtonCart,
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
@@ -86,16 +95,23 @@ export function Home() {
             <CoffeeCardTag>TRADICIONAL</CoffeeCardTag>
           </CoffeeCardTagWrapper>
           <CoffeeCardMainText>Expresso Tradicional</CoffeeCardMainText>
-          <CoffeeCardSubText>Expresso diluído, menos intenso que o tradicional</CoffeeCardSubText>
+          <CoffeeCardSubText>
+            Expresso diluído, menos intenso que o tradicional
+          </CoffeeCardSubText>
           <CoffeeCardFooterWrapper>
-            <CoffeeCardFooterPrice>
-              R$ 9,99
-            </CoffeeCardFooterPrice>
-           <CoffeeCardFooterCounterWrapper>
-            <CoffeeCardFooterCounterButton>-</CoffeeCardFooterCounterButton>
-            <CoffeeCardFooterCounterSpan>0</CoffeeCardFooterCounterSpan>
-            <CoffeeCardFooterCounterButton>+</CoffeeCardFooterCounterButton>
-           </CoffeeCardFooterCounterWrapper>
+            <CoffeeCardFooterPrice>R$ 9,99</CoffeeCardFooterPrice>
+            <CoffeeCardFooterCounterWrapper>
+              <CoffeeCardFooterCounterButton>
+                <Minus />
+              </CoffeeCardFooterCounterButton>
+              <CoffeeCardFooterCounterSpan>0</CoffeeCardFooterCounterSpan>
+              <CoffeeCardFooterCounterButton>
+                <Plus />
+              </CoffeeCardFooterCounterButton>
+            </CoffeeCardFooterCounterWrapper>
+            <CoffeeCardFooterButtonCart>
+              <ShoppingCartSimple weight="fill" />
+            </CoffeeCardFooterButtonCart>
           </CoffeeCardFooterWrapper>
         </CoffeeCard>
         <CoffeeCard>

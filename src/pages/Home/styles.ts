@@ -114,6 +114,7 @@ export const CoffeeCard = styled.div`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 5px 30px 5px 30px;
   gap: 0.7rem;
+  padding-bottom: 1rem;
   img {
     margin-top: -3rem;
   }
@@ -158,7 +159,6 @@ export const CoffeeCardFooterWrapper = styled.div`
   gap: 0.3rem;
 `;
 
-
 export const CoffeeCardFooterPrice = styled.span`
   font-family: "Baloo 2";
   font-size: 1.2rem;
@@ -168,37 +168,55 @@ export const CoffeeCardFooterPrice = styled.span`
 export const CoffeeCardFooterCounterWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content:"center"
+  justify-content: "center";
 `;
 
 export const CoffeeCardFooterCounterButton = styled.button`
+  justify-content: "center";
+  display: flex;
+  flex-direction: row;
+  align-items: "center";
   font-family: "Baloo 2";
-  font-size: 1.2rem;
   font-weight: 900;
   color: ${(props) => props.theme["pink"]};
   width: 2rem;
   height: auto;
-  padding: 0.1rem;
-  font-size: 1.3rem;
   border: none;
   border-radius: 1px;
-  background-color: ${(props) => props.theme["light-grey"]};;
+  background-color: ${(props) => props.theme["light-grey"]};
+
+  svg {
+    padding: auto;
+    margin: auto;
+    font-size: 1rem;
+  }
 `;
 
 export const CoffeeCardFooterCounterSpan = styled.span`
-padding: auto;
+  padding: auto;
+  margin: auto;
   font-family: "Baloo 2";
   font-weight: 900;
-  width: auto;
-  height: auto;
-  font-size: 1rem;
   border: none;
   border-radius: 1px;
-  background-color: ${(props) => props.theme["light-grey"]}
+  background-color: ${(props) => props.theme["light-grey"]};
 `;
 
 export const CoffeeCardFooterButtonCart = styled.button`
+ padding: auto;
+  margin: auto;
   font-family: "Baloo 2";
   font-size: 1.2rem;
   font-weight: 900;
+  width: 2rem;
+  border: none;
+  border-radius: 5px;
+
+  background-color: ${(props) => props.theme["dark-purple"]};
+  svg {
+    padding: auto;
+    margin: auto;
+    font-size: 1rem;
+    color: ${(props) => props.theme["white"]};
+  }
 `;
