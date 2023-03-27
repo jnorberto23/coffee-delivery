@@ -14,7 +14,7 @@ export function Header() {
                     <MapPin size={22} weight="fill"/>
                     Pindamonhangaba, SP
                 </RegionSpan>
-                <CartButton>
+                <CartButton to={'checkout'} >
                     <ShoppingCart size={22} weight="fill"/>
                 </CartButton>
             </RegionAndCartContainer>
