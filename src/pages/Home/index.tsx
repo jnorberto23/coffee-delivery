@@ -18,7 +18,7 @@ import {
 } from "./styles";
 import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
-import { CoffeeItem } from "../components/Coffee";
+import { CoffeeItem } from "./components/Coffee";
 
 export function Home() {
   return (

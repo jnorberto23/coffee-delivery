@@ -1,5 +1,5 @@
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
-import { TradicionalExpress } from "../../../assets/coffees"
+import { TradicionalExpress } from "../../../../assets/coffees"
 import { CoffeeCard, 
     CoffeeCardFooterButtonCart,
      CoffeeCardFooterCounterButton,
