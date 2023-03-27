@@ -1,26 +1,36 @@
+import { MapPinLine } from "phosphor-react";
 import {
   AddressAndPaymentWrapper,
   AddressCard,
   FrameWrapper,
+  IconAndTextWrapper,
+  MainText,
   SelectedCoffeeCard,
   SelectedCoffeeWrapper,
   SubText,
+  TitleText,
 } from "./styles";
 
 export function Checkout() {
   return (
     <FrameWrapper>
       <AddressAndPaymentWrapper>
-        <SubText>Complete seu pedido</SubText>
+        <TitleText>Complete seu pedido</TitleText>
         <AddressCard>
-
+          <IconAndTextWrapper color="dark-yellow">
+            <MapPinLine />
+            <div>
+              <MainText>Endereço de Entrega</MainText>
+              <SubText>
+                Informe o endereço onde deseja receber seu pedido
+              </SubText>
+            </div>
+          </IconAndTextWrapper>
         </AddressCard>
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>
-      <SubText>Cafés selecionados</SubText>
-        <SelectedCoffeeCard>
-       
-        </SelectedCoffeeCard>
+        <TitleText>Cafés selecionados</TitleText>
+        <SelectedCoffeeCard></SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
     </FrameWrapper>
   );

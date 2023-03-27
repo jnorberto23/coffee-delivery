@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export type spanVariant = "dark-yellow" | "dark-purple" ;
+interface SpanProps {
+  color: spanVariant;
+}
+
 export const FrameWrapper = styled.div`
   margin-top: 2.5rem;
   display: flex;
@@ -24,10 +29,12 @@ export const AddressCard = styled.div`
   width: 100%;
   height: 80vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: ${(props) => props.theme["base-card"]};
+  padding-top: 3rem;
+  padding-left: 3rem;
 `;
 
 export const SelectedCoffeeWrapper = styled.div`
@@ -50,10 +57,36 @@ export const SelectedCoffeeCard = styled.div`
   background-color: ${(props) => props.theme["base-card"]};
 `;
 
-export const SubText = styled.p`
+export const TitleText = styled.p`
   font-family: "Baloo 2";
   font-style: normal;
   font-weight: 700;
   font-size: 1.1rem;
   line-height: 130%;
 `;
+
+export const MainText = styled.p`
+font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+`;
+
+export const SubText = styled.p`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 0.9rem;
+`;
+
+export const IconAndTextWrapper = styled.div<SpanProps>`
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+
+svg {
+    color: ${(props) => props.theme[props.color]};
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+`
