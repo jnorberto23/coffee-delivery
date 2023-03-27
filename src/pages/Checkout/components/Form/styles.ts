@@ -10,7 +10,7 @@ padding-top: 2rem;
 `
 
 export const AddressFormInput = styled.input`
-height: 2rem;
+height: 2.5rem;
 display: flex;
 background-color: ${(props) => props.theme["base-input"]};
 background-color: ${(props) => props.theme["light-grey"]};
@@ -25,6 +25,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 0.9rem;
 line-height: 130%;
+width: 30%;
 `
 
 export const NumberAndComplementWrapper = styled.div`
@@ -32,12 +33,31 @@ display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: flex-start;
+gap: 1rem;
+flex-wrap: wrap;
 
+input:first-child{
+    width: 30%;
+}
+input:last-child{
+    width: 60%
+}
 `
 export const CityAndStateWrapper = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: flex-start;
+gap: 1rem;
+flex-wrap: wrap;
 
+input:first-child{
+    width: 30%;
+}
+input:nth-child(2){
+    width: 50%;
+}
+input:last-child{
+    width: 10%
+}
 `
