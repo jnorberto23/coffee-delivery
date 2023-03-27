@@ -1,4 +1,4 @@
-import { MapPinLine } from "phosphor-react";
+import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { AddressForm } from "./components/Form";
 import {
   AddressAndPaymentWrapper,
@@ -6,6 +6,7 @@ import {
   FrameWrapper,
   IconAndTextWrapper,
   MainText,
+  PaymentCard,
   SelectedCoffeeCard,
   SelectedCoffeeWrapper,
   SubText,
@@ -27,8 +28,19 @@ export function Checkout() {
               </SubText>
             </div>
           </IconAndTextWrapper>
-          <AddressForm/>
+          <AddressForm />
         </AddressCard>
+        <PaymentCard>
+          <IconAndTextWrapper color="dark-purple">
+            <CurrencyDollar />
+            <div>
+              <MainText>Pagamento</MainText>
+              <SubText>
+                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+              </SubText>
+            </div>
+          </IconAndTextWrapper>
+        </PaymentCard>
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>
         <TitleText>Cafés selecionados</TitleText>
