@@ -7,6 +7,7 @@ justify-content: flex-start;
 align-items: flex-start;
 gap: 1rem;
 padding-top: 2rem;
+width: 100%;
 `
 
 export const AddressFormInput = styled.input`
@@ -16,9 +17,7 @@ background-color: ${(props) => props.theme["base-input"]};
 background-color: ${(props) => props.theme["light-grey"]};
 border: 1px solid #E6E5E5;
 border-radius: 4px;
-flex: none;
 order: 0;
-flex-grow: 0;
 padding-left: 0.8rem;
 font-family: 'Roboto';
 font-style: normal;
@@ -35,6 +34,7 @@ justify-content: flex-start;
 align-items: flex-start;
 gap: 1rem;
 flex-wrap: wrap;
+width: 100%;
 
 input:first-child{
     width: 30%;
@@ -50,14 +50,14 @@ justify-content: flex-start;
 align-items: flex-start;
 gap: 1rem;
 flex-wrap: wrap;
-
+width: 100%;
 input:first-child{
     width: 30%;
 }
 input:nth-child(2){
-    width: 50%;
+    width: 45%;
 }
 input:last-child{
-    width: 10%
+    width: 12%
 }
 `

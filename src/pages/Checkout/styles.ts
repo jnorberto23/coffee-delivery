@@ -27,7 +27,7 @@ export const AddressAndPaymentWrapper = styled.div`
 
 export const AddressCard = styled.div`
   width: 100%;
-  height: 80vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -35,6 +35,7 @@ export const AddressCard = styled.div`
   background-color: ${(props) => props.theme["base-card"]};
   padding-top: 3rem;
   padding-left: 3rem;
+  padding-bottom: 3rem;
 `;
 
 export const SelectedCoffeeWrapper = styled.div`
