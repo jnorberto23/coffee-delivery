@@ -1,4 +1,5 @@
 import { MapPinLine } from "phosphor-react";
+import { AddressForm } from "./components/Form";
 import {
   AddressAndPaymentWrapper,
   AddressCard,
@@ -26,6 +27,7 @@ export function Checkout() {
               </SubText>
             </div>
           </IconAndTextWrapper>
+          <AddressForm/>
         </AddressCard>
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>

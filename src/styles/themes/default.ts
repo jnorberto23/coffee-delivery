@@ -8,5 +8,6 @@ export const defaultTheme = {
   'light-purple': '#EBE5F9',
   'dark-purple': '#4B2995',
   'pink': '#8047F8',
-  'base-card': '#F3F2F2'
+  'base-card': '#F3F2F2',
+  'base-input': '#EDEDED'
 }
