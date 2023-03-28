@@ -1,4 +1,5 @@
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { CoffeeSelected } from "./components/CoffeeSelected";
 import { AddressForm } from "./components/Form";
 import { PaymentForm } from "./components/PaymentForm";
 import {
@@ -9,12 +10,12 @@ import {
   MainText,
   PaymentCard,
   SelectedCoffeeCard,
+  SelectedCoffeeList,
   SelectedCoffeeWrapper,
   SubText,
   TextWrapper,
   TitleText,
 } from "./styles";
-
 export function Checkout() {
   return (
     <FrameWrapper>
@@ -47,7 +48,11 @@ export function Checkout() {
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>
         <TitleText>Cafés selecionados</TitleText>
-        <SelectedCoffeeCard></SelectedCoffeeCard>
+        <SelectedCoffeeCard>
+          <SelectedCoffeeList>
+            <CoffeeSelected></CoffeeSelected>
+          </SelectedCoffeeList>
+        </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
     </FrameWrapper>
   );

@@ -39,26 +39,6 @@ export const AddressCard = styled.div`
   padding-bottom: 3rem;
 `;
 
-export const SelectedCoffeeWrapper = styled.div`
-  padding: auto;
-  flex-basis: 40%;
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-`;
-export const SelectedCoffeeCard = styled.div`
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: ${(props) => props.theme["base-card"]};
-`;
-
 export const TitleText = styled.p`
   font-family: "Baloo 2";
   font-style: normal;
@@ -112,4 +92,72 @@ export const TextWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 0.4rem;
+`;
+
+export const SelectedCoffeeWrapper = styled.div`
+  padding: auto;
+  flex-basis: 40%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+`;
+
+export const SelectedCoffeeCard = styled.div`
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: ${(props) => props.theme["base-card"]};
+`;
+
+export const SelectedCoffeeList = styled.div`
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+
+export const CounterWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: "center";
+`;
+
+export const CounterButton = styled.button`
+  justify-content: "center";
+  display: flex;
+  flex-direction: row;
+  align-items: "center";
+  font-family: "Baloo 2";
+  font-weight: 900;
+  color: ${(props) => props.theme["pink"]};
+  width: 2rem;
+  height: auto;
+  border: none;
+  border-radius: 1px;
+  background-color: ${(props) => props.theme["light-grey"]};
+
+  svg {
+    padding: auto;
+    margin: auto;
+    font-size: 1rem;
+  }
+`;
+
+export const CounterSpan = styled.span`
+  padding: auto;
+  margin: auto;
+  font-family: "Baloo 2";
+  font-weight: 900;
+  border: none;
+  border-radius: 1px;
+  background-color: ${(props) => props.theme["light-grey"]};
 `;
