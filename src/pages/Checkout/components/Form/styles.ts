@@ -13,12 +13,10 @@ input:nth-child(2){
     width: 92.5%;
 }
 `
-
 export const AddressFormInput = styled.input`
 height: 2.5rem;
 display: flex;
 background-color: ${(props) => props.theme["base-input"]};
-background-color: ${(props) => props.theme["light-grey"]};
 border: 1px solid #E6E5E5;
 border-radius: 4px;
 order: 0;

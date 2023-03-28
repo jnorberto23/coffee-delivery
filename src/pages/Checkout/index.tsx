@@ -1,5 +1,6 @@
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { AddressForm } from "./components/Form";
+import { PaymentForm } from "./components/PaymentForm";
 import {
   AddressAndPaymentWrapper,
   AddressCard,
@@ -38,6 +39,7 @@ export function Checkout() {
               <SubText>
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
               </SubText>
+             <PaymentForm/>
             </div>
           </IconAndTextWrapper>
         </PaymentCard>

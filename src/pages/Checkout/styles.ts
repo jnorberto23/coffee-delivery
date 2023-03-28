@@ -88,7 +88,7 @@ export const PaymentCard = styled.div`
   justify-content: flex-start;
   background-color: ${(props) => props.theme["base-card"]};
   padding-top: 3rem;
-  padding-left: 3rem;
+    padding-left: 3rem;
   padding-bottom: 3rem;
 `;
 
