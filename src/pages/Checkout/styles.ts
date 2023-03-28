@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export type spanVariant = "dark-yellow" | "dark-purple" ;
+export type spanVariant = "dark-yellow" | "brand-purple";
 interface SpanProps {
   color: spanVariant;
 }
@@ -12,6 +12,7 @@ export const FrameWrapper = styled.div`
   gap: 2rem;
   align-items: flex-start;
   justify-content: end;
+  margin-bottom: 2.5rem;
 `;
 
 export const AddressAndPaymentWrapper = styled.div`
@@ -67,14 +68,14 @@ export const TitleText = styled.p`
 `;
 
 export const MainText = styled.p`
-font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
 `;
 
 export const SubText = styled.p`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-size: 0.9rem;
 `;
@@ -88,20 +89,27 @@ export const PaymentCard = styled.div`
   justify-content: flex-start;
   background-color: ${(props) => props.theme["base-card"]};
   padding-top: 3rem;
-    padding-left: 3rem;
+  padding-left: 3rem;
   padding-bottom: 3rem;
 `;
 
-
 export const IconAndTextWrapper = styled.div<SpanProps>`
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 
-svg {
+  svg {
     color: ${(props) => props.theme[props.color]};
     font-size: 1.3rem;
     margin-right: 0.5rem;
   }
-`
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4rem;
+`;

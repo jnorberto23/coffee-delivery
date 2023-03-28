@@ -6,6 +6,7 @@ export const defaultTheme = {
   'mid-yellow': '#DBAC2C',
   'dark-yellow': '#C47F17',
   'light-purple': '#EBE5F9',
+  'brand-purple': '#8047F8',
   'dark-purple': '#4B2995',
   'pink': '#8047F8',
   'base-card': '#F3F2F2',

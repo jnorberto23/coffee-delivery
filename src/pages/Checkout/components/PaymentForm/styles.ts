@@ -16,7 +16,7 @@ export const InputWrapper = styled.div`
 
   label {
     display: inline-block;
-    width: 11.5rem;
+    width: 11.1rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -29,12 +29,12 @@ export const InputWrapper = styled.div`
     background-color: ${(props) => props.theme["light-grey"]};
     svg{
         font-size: 0.9rem;
-        color: ${(props) => props.theme["dark-purple"]}
+        color: ${(props) => props.theme["brand-purple"]}
     }
   }
 
   input:checked + label {
-    border:1px solid ${(props) => props.theme["dark-purple"]};
+    border:1px solid ${(props) => props.theme["brand-purple"]};
     padding: auto;
     margin: auto;
     outline: none !important;

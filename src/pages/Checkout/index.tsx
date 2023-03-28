@@ -11,6 +11,7 @@ import {
   SelectedCoffeeCard,
   SelectedCoffeeWrapper,
   SubText,
+  TextWrapper,
   TitleText,
 } from "./styles";
 
@@ -22,24 +23,24 @@ export function Checkout() {
         <AddressCard>
           <IconAndTextWrapper color="dark-yellow">
             <MapPinLine />
-            <div>
+            <TextWrapper>
               <MainText>Endereço de Entrega</MainText>
               <SubText>
                 Informe o endereço onde deseja receber seu pedido
               </SubText>
-            </div>
+            </TextWrapper>
           </IconAndTextWrapper>
           <AddressForm />
         </AddressCard>
         <PaymentCard>
-          <IconAndTextWrapper color="dark-purple">
+          <IconAndTextWrapper color="brand-purple">
             <CurrencyDollar />
-            <div>
+            <TextWrapper>
               <MainText>Pagamento</MainText>
               <SubText>
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
               </SubText>
-            </div>
+            </TextWrapper>
           </IconAndTextWrapper>
           <PaymentForm />
         </PaymentCard>
