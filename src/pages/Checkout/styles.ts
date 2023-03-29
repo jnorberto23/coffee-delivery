@@ -108,7 +108,7 @@ export const SelectedCoffeeWrapper = styled.div`
 
 export const SelectedCoffeeCard = styled.div`
   width: 100%;
-  height: 80vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -126,8 +126,7 @@ export const SelectedCoffeeList = styled.div`
 `;
 
 export const SelectedCoffeeFooter = styled.div`
-border-top: 1px solid black;
-  padding: 2rem 4rem;
+  padding: 1rem 3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -140,24 +139,37 @@ export const SelectedCoffeeFooterLineWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-`;
 
+  p:first-child {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+  p:last-child {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1.1rem;
+  }
+
+  :
+`;
 
 export const ConfirmOrderButton = styled(Link)`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
   margin: auto;
-  width: 2.4rem;
-  height: 2.4rem;
-  background-color: ${(props) => props.theme["light-yellow"]};
+  width: 100%;
+  height: 3rem;
+  background-color: ${(props) => props.theme["brand-yellow"]};
   border: none;
-  border-radius: 3px;
-
-  svg {
-    color: ${(props) => props.theme["dark-yellow"]};
-  }
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: ${(props) => props.theme["white"]};
 `;

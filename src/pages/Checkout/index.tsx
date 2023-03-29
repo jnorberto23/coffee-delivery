@@ -5,6 +5,7 @@ import { PaymentForm } from "./components/PaymentForm";
 import {
   AddressAndPaymentWrapper,
   AddressCard,
+  ConfirmOrderButton,
   FrameWrapper,
   IconAndTextWrapper,
   MainText,
@@ -57,20 +58,25 @@ export function Checkout() {
             <CoffeeSelected></CoffeeSelected>
             <CoffeeSelected></CoffeeSelected>
             <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
           </SelectedCoffeeList>
           <SelectedCoffeeFooter>
             <SelectedCoffeeFooterLineWrapper>
-            <SubText>Total de itens</SubText>
-            <SubText>R$ 29,70</SubText>
+              <p>Total de itens</p>
+              <p>R$ 29.70</p>
             </SelectedCoffeeFooterLineWrapper>
             <SelectedCoffeeFooterLineWrapper>
-            <SubText>Entrega</SubText>
-            <SubText>R$ 3,50</SubText>
+              <p>Entrega</p>
+              <p>R$ 3,50</p>
             </SelectedCoffeeFooterLineWrapper>
             <SelectedCoffeeFooterLineWrapper>
-            <TitleText>Total</TitleText>
-            <TitleText>R$ 33,20</TitleText>
+              <p>Total</p>
+              <p>R$ 33,20</p>
             </SelectedCoffeeFooterLineWrapper>
+            <ConfirmOrderButton to={"/"}>Confirmar Pedido</ConfirmOrderButton>
           </SelectedCoffeeFooter>
         </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
