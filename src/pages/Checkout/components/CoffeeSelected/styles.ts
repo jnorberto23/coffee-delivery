@@ -56,7 +56,10 @@ export const CounterAndRemoveButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 1rem
+  gap: 0.5rem;  
+  width: 100%;
+  margin-left: 2.6rem;
+  flex-wrap: 1;
 `;
 
 export const CounterWrapper = styled.div`
@@ -90,7 +93,6 @@ export const CounterSpan = styled.span`
   padding: auto;
   margin: auto;
   font-family: "Baloo 2";
-  font-weight: 900;
   border: none;
   border-radius: 1px;
   background-color: ${(props) => props.theme["light-grey"]};
@@ -104,10 +106,10 @@ export const RemoveButton = styled.button`
     flex-direction: row;
     justify-content: flex-start;
     border:none;
-    gap: 0.2rem;
+    gap: 0.1rem;
     font-size: 0.7rem;
     cursor: pointer;
-    padding: 0.3rem;
+    padding: 0.2rem 0.3rem;
     text-transform: uppercase;
     background-color: ${(props) => props.theme["light-grey"]};
     svg{

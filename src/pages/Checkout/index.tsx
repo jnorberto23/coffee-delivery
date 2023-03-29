@@ -51,6 +51,10 @@ export function Checkout() {
         <SelectedCoffeeCard>
           <SelectedCoffeeList>
             <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>
           </SelectedCoffeeList>
         </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
