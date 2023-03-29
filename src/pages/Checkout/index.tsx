@@ -55,13 +55,6 @@ export function Checkout() {
           <SelectedCoffeeList>
             <CoffeeSelected></CoffeeSelected>
             <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
           </SelectedCoffeeList>
           <SelectedCoffeeFooter>
             <SelectedCoffeeFooterLineWrapper>

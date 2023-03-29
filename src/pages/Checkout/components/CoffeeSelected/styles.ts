@@ -38,7 +38,8 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 1.3rem;
   width: 100%;
   flex-wrap: 1;
 `;

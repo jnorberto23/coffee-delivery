@@ -114,6 +114,8 @@ export const SelectedCoffeeCard = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   background-color: ${(props) => props.theme["base-card"]};
+  padding-bottom: 2rem;
+  border-radius: 5px 50px 5px 50px;
 `;
 
 export const SelectedCoffeeList = styled.div`
@@ -133,8 +135,14 @@ export const SelectedCoffeeFooter = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 0.5rem;
-`;
 
+  div:nth-child(3) {
+    p {
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+  }
+`;
 export const SelectedCoffeeFooterLineWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -152,8 +160,6 @@ export const SelectedCoffeeFooterLineWrapper = styled.div`
     font-style: normal;
     font-size: 1.1rem;
   }
-
-  :
 `;
 
 export const ConfirmOrderButton = styled(Link)`
