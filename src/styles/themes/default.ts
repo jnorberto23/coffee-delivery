@@ -10,6 +10,7 @@ export const defaultTheme = {
   'pink': '#8047F8',
   'base-card': '#F3F2F2',
   'base-input': '#EDEDED',
+  'base-subtitle': '#403937',
   'base-button': '#E6E5E5',
   'brand-yellow': '#DBAC2C',
   'brand-purple': '#8047F8',

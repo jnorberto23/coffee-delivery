@@ -54,7 +54,7 @@ export function Checkout() {
         <SelectedCoffeeCard>
           <SelectedCoffeeList>
             <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>
+            <CoffeeSelected></CoffeeSelected>       
           </SelectedCoffeeList>
           <SelectedCoffeeFooter>
             <SelectedCoffeeFooterLineWrapper>
@@ -69,7 +69,7 @@ export function Checkout() {
               <p>Total</p>
               <p>R$ 33,20</p>
             </SelectedCoffeeFooterLineWrapper>
-            <ConfirmOrderButton to={"/"}>Confirmar Pedido</ConfirmOrderButton>
+            <ConfirmOrderButton to={"/success"}>Confirmar Pedido</ConfirmOrderButton>
           </SelectedCoffeeFooter>
         </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
