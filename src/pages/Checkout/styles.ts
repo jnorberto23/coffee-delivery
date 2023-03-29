@@ -125,39 +125,3 @@ export const SelectedCoffeeList = styled.div`
 `;
 
 
-export const CounterWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: "center";
-`;
-
-export const CounterButton = styled.button`
-  justify-content: "center";
-  display: flex;
-  flex-direction: row;
-  align-items: "center";
-  font-family: "Baloo 2";
-  font-weight: 900;
-  color: ${(props) => props.theme["pink"]};
-  width: 2rem;
-  height: auto;
-  border: none;
-  border-radius: 1px;
-  background-color: ${(props) => props.theme["light-grey"]};
-
-  svg {
-    padding: auto;
-    margin: auto;
-    font-size: 1rem;
-  }
-`;
-
-export const CounterSpan = styled.span`
-  padding: auto;
-  margin: auto;
-  font-family: "Baloo 2";
-  font-weight: 900;
-  border: none;
-  border-radius: 1px;
-  background-color: ${(props) => props.theme["light-grey"]};
-`;
