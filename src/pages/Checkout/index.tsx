@@ -10,6 +10,8 @@ import {
   MainText,
   PaymentCard,
   SelectedCoffeeCard,
+  SelectedCoffeeFooter,
+  SelectedCoffeeFooterLineWrapper,
   SelectedCoffeeList,
   SelectedCoffeeWrapper,
   SubText,
@@ -56,6 +58,20 @@ export function Checkout() {
             <CoffeeSelected></CoffeeSelected>
             <CoffeeSelected></CoffeeSelected>
           </SelectedCoffeeList>
+          <SelectedCoffeeFooter>
+            <SelectedCoffeeFooterLineWrapper>
+            <SubText>Total de itens</SubText>
+            <SubText>R$ 29,70</SubText>
+            </SelectedCoffeeFooterLineWrapper>
+            <SelectedCoffeeFooterLineWrapper>
+            <SubText>Entrega</SubText>
+            <SubText>R$ 3,50</SubText>
+            </SelectedCoffeeFooterLineWrapper>
+            <SelectedCoffeeFooterLineWrapper>
+            <TitleText>Total</TitleText>
+            <TitleText>R$ 33,20</TitleText>
+            </SelectedCoffeeFooterLineWrapper>
+          </SelectedCoffeeFooter>
         </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>
     </FrameWrapper>

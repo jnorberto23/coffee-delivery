@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export type spanVariant = "dark-yellow" | "brand-purple";
@@ -109,7 +110,7 @@ export const SelectedCoffeeCard = styled.div`
   width: 100%;
   height: 80vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   background-color: ${(props) => props.theme["base-card"]};
@@ -124,4 +125,39 @@ export const SelectedCoffeeList = styled.div`
   justify-content: flex-start;
 `;
 
+export const SelectedCoffeeFooter = styled.div`
+border-top: 1px solid black;
+  padding: 2rem 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+`;
 
+export const SelectedCoffeeFooterLineWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
+
+export const ConfirmOrderButton = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: ${(props) => props.theme["light-yellow"]};
+  border: none;
+  border-radius: 3px;
+
+  svg {
+    color: ${(props) => props.theme["dark-yellow"]};
+  }
+`;
