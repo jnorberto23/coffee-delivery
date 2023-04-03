@@ -46,17 +46,17 @@ export const InfoImageWrapper = styled.div`
 export const InfoWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 35vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   margin: auto;
   padding: 2rem;
 
   ::before {
-    border-radius: 10px 50px 10px 50px;
+    border-radius: 5px 50px 5px 50px;
     border: 2px solid transparent; 
     background: linear-gradient(45deg, yellow, purple) border-box; /*3*/
     -webkit-mask: /*4*/ linear-gradient(#fff 0 0) content-box,
@@ -96,7 +96,7 @@ export const InfoItem = styled.p`
 export const InfoItemSpan = styled.span<SpanProps>`
   display: flex;
   height: 2rem;
-  width: 2.5rem;
+  width: 2rem;
   border-radius: 50%;
   background: ${(props) => props.theme[props.color]};
   align-items: center;

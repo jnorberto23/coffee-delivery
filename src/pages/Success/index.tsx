@@ -27,8 +27,7 @@ export function Success() {
               <InfoItemSpan color="brand-purple">
               <MapPin weight="fill"/>
               </InfoItemSpan>
-              <p>Entrega em Rua João Daniel Martinelli, 102Farrapos - Porto Alegre, RS</p>
-          
+              <p>Entrega em <b>Rua João Daniel Martinelli, 102</b><br/>Farrapos - Porto Alegre, RS</p>
             </InfoItem>
             <InfoItem >
               <InfoItemSpan color="brand-yellow">
