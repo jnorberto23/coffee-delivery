@@ -53,7 +53,7 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 
   margin: auto;
-  padding: auto;
+  padding: 2rem;
 
   ::before {
     border-radius: 10px 50px 10px 50px;
@@ -80,24 +80,32 @@ export const ImageWrapper = styled.img`
   padding: auto;
 `;
 
-export const IconAndTextWrapper = styled.div<SpanProps>`
+export const InfoItem = styled.p`
+  flex-basis: content;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items:center;
   justify-content: center;
-  color: black;
-
-  svg {
-    color: ${(props) => props.theme[props.color]};
-    font-size: 1.3rem;
-    margin-right: 0.5rem;
-  }
+  margin-top: 1rem;
+  gap: 0.7rem;
 `;
 
-export const TextWrapper = styled.div`
+export const InfoItemSpan = styled.span<SpanProps>`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  height: 2rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background: ${(props) => props.theme[props.color]};
+  align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+
+  svg {
+    height: 1rem;
+    width: 1rem;
+    font-size: 1rem;
+    color: ${(props) => props.theme["white"]};
+  }
 `;
