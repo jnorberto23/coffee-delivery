@@ -1,9 +1,4 @@
-import {
-  Coffee,
-  Package,
-  ShoppingCart,
-  Timer,
-} from "phosphor-react";
+import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import {
   LandingContainer,
   LandingItemSpan,
@@ -20,6 +15,9 @@ import LandingImage from "../../assets/landing-image.png";
 import { Fragment } from "react";
 import { CoffeeItem } from "./components/Coffee";
 
+import { coffeeData } from "../../data/coffeeData";
+
+console.log("data", coffeeData);
 export function Home() {
   return (
     <Fragment>
@@ -69,15 +67,21 @@ export function Home() {
       <CoffeeListText>Nossos cafés</CoffeeListText>
 
       <CoffeeList>
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-
+        {coffeeData.coffees.map((coffee) => {
+          return (
+            <div className="coffee-card" key={coffee.id}>
+              <CoffeeItem
+                id={coffee.id}
+                tag={coffee.tag}
+                price={coffee.price}
+                name={coffee.name}
+                description={coffee.description}
+                image={coffee.image}
+              />
+            </div>
+          );
+        })}
       </CoffeeList>
-
     </Fragment>
   );
 }

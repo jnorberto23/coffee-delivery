@@ -10,7 +10,7 @@ export const LandingContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 60vh;
   flex-wrap: wrap;
 `;
 
@@ -89,7 +89,8 @@ export const CoffeeListText = styled.p`
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 1000;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
 `;
 
 export const CoffeeList = styled.div`

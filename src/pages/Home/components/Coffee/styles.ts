@@ -12,6 +12,7 @@ export const CoffeeCard = styled.div`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 5px 30px 5px 30px;
   gap: 0.7rem;
+  margin-bottom: 3rem;
   padding-bottom: 1rem;
   img {
     margin-top: -3rem;
@@ -27,6 +28,7 @@ export const CoffeeCardTagWrapper = styled.div`
 `;
 
 export const CoffeeCardTag = styled.span`
+  text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 900;
   background: ${(props) => props.theme["light-yellow"]};
