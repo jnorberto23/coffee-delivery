@@ -1,0 +1,11 @@
+{
+    "coffees": [
+    {
+        "id": crypto.randon,
+        "name": "Laranja"
+    },
+    {
+        "id":23,
+        "name": "Laranja"
+    },
+]}
