@@ -1,18 +1,6 @@
-import { TradicionalExpress } from "../../../src/assets/coffees"
+import { TradicionalExpress } from "../../web/src/assets/coffees"
 
-interface DB {
-    coffees: Coffee[]
-}
-
-type Coffee = {
-    id: string;
-    name: string;
-    tag: string[];
-    description: string;
-    price: number,
-    image: string;
-}
-export const db: DB = {
+const db = {
     coffees: [
         {
             id: crypto.randomUUID(),
@@ -25,3 +13,5 @@ export const db: DB = {
 
     ],
 };
+
+export default db
