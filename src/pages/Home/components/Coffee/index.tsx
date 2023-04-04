@@ -1,5 +1,4 @@
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
-import { TradicionalExpress } from "../../../../assets/coffees";
 import {
   CoffeeCard,
   CoffeeCardFooterButtonCart,
@@ -13,6 +12,7 @@ import {
   CoffeeCardTag,
   CoffeeCardTagWrapper,
 } from "./styles";
+import { useState } from "react";
 
 type PropsType = {
   id: string;
@@ -24,6 +24,16 @@ type PropsType = {
 };
 
 export function CoffeeItem(props: PropsType) {
+  const [counter, setCounter] = useState(0);
+  function HandleRemoveCounter() {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  }
+
+  function HandleAddCounter() {
+    setCounter(counter + 1);
+  }
   return (
     <CoffeeCard>
       <img src={props.image} alt="" />
@@ -37,11 +47,11 @@ export function CoffeeItem(props: PropsType) {
       <CoffeeCardFooterWrapper>
         <CoffeeCardFooterPrice>R$ {props.price}</CoffeeCardFooterPrice>
         <CoffeeCardFooterCounterWrapper>
-          <CoffeeCardFooterCounterButton>
+          <CoffeeCardFooterCounterButton onClick={HandleRemoveCounter}>
             <Minus />
           </CoffeeCardFooterCounterButton>
-          <CoffeeCardFooterCounterSpan>0</CoffeeCardFooterCounterSpan>
-          <CoffeeCardFooterCounterButton>
+          <CoffeeCardFooterCounterSpan>{counter}</CoffeeCardFooterCounterSpan>
+          <CoffeeCardFooterCounterButton onClick={HandleAddCounter}>
             <Plus />
           </CoffeeCardFooterCounterButton>
         </CoffeeCardFooterCounterWrapper>

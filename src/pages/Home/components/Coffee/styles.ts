@@ -84,6 +84,7 @@ export const CoffeeCardFooterCounterButton = styled.button`
   border: none;
   border-radius: 1px;
   background-color: ${(props) => props.theme["light-grey"]};
+  cursor: pointer;
 
   svg {
     padding: auto;
@@ -111,6 +112,7 @@ export const CoffeeCardFooterButtonCart = styled.button`
   width: 2rem;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 
   background-color: ${(props) => props.theme["dark-purple"]};
   svg {
