@@ -12,7 +12,8 @@ import {
   CoffeeCardTag,
   CoffeeCardTagWrapper,
 } from "./styles";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SelectedCoffeesContext, SelectedCoffeesContextProvider } from "../../../../context/SelectedCoffeesContext";
 
 type PropsType = {
   id: string;
@@ -24,7 +25,9 @@ type PropsType = {
 };
 
 export function CoffeeItem(props: PropsType) {
+  const { addCoffeeToCart, coffees } = useContext(SelectedCoffeesContext)
   const [counter, setCounter] = useState(0);
+
   function HandleRemoveCounter() {
     if (counter > 0) {
       setCounter(counter - 1);
@@ -33,6 +36,11 @@ export function CoffeeItem(props: PropsType) {
 
   function HandleAddCounter() {
     setCounter(counter + 1);
+  }
+
+  function HandleAddToCart() {
+    addCoffeeToCart({...props, amount: counter})
+    console.log('coffees', coffees)
   }
   return (
     <CoffeeCard>
@@ -55,7 +63,7 @@ export function CoffeeItem(props: PropsType) {
             <Plus />
           </CoffeeCardFooterCounterButton>
         </CoffeeCardFooterCounterWrapper>
-        <CoffeeCardFooterButtonCart>
+        <CoffeeCardFooterButtonCart onClick={HandleAddToCart}>
           <ShoppingCartSimple weight="fill" />
         </CoffeeCardFooterButtonCart>
       </CoffeeCardFooterWrapper>
