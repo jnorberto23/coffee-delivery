@@ -1,6 +1,4 @@
 import { ReactNode, createContext, useEffect, useRef, useState } from "react";
-import { isEqual, map } from '';
-
 type CoffeeType = {
   id: string;
   name: string;
@@ -28,8 +26,6 @@ export function SelectedCoffeesContextProvider({
   const [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [count, setCount] = useState(0)
 
-  const prevCoffeeData = useRef(coffees);
-  
   function addCoffeeToCart(coffee: CoffeeType):void {
     const found = coffees.find(element => element.id === coffee.id);
    
@@ -38,6 +34,7 @@ export function SelectedCoffeesContextProvider({
       const newCoffees = coffees;
       newCoffees[index].amount += coffee.amount
       setCoffees(newCoffees)
+      setCount(coffee.amount + count)
     }
     else{
       setCoffees([...coffees, coffee])
@@ -45,13 +42,10 @@ export function SelectedCoffeesContextProvider({
   }
 
   useEffect(() => {
-    if (!isEqual(map(prevData.current, "country"), map(data, "country"))) {
-      console.log("country changed");
-    }
     coffees.forEach((element) => {
       setCount(element.amount + count)
     })
-  }, [coffees, ...coffees.map(v => v.amount)])
+  }, [coffees])
 
   return (
     <SelectedCoffeesContext.Provider
