@@ -19,7 +19,10 @@ import {
   TextWrapper,
   TitleText,
 } from "./styles";
+import { useContext } from "react";
+import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
 export function Checkout() {
+  const { coffees } = useContext(SelectedCoffeesContext);
   return (
     <FrameWrapper>
       <AddressAndPaymentWrapper>
@@ -53,8 +56,18 @@ export function Checkout() {
         <TitleText>Cafés selecionados</TitleText>
         <SelectedCoffeeCard>
           <SelectedCoffeeList>
-            <CoffeeSelected></CoffeeSelected>
-            <CoffeeSelected></CoffeeSelected>       
+            {coffees.map((coffee) => {
+              return (
+                <CoffeeSelected
+                  key={coffee.id}
+                  id={coffee.id}
+                  price={coffee.price}
+                  name={coffee.name}
+                  image={coffee.image}
+                  amount={coffee.amount}
+                />
+              );
+            })}
           </SelectedCoffeeList>
           <SelectedCoffeeFooter>
             <SelectedCoffeeFooterLineWrapper>
@@ -69,7 +82,9 @@ export function Checkout() {
               <p>Total</p>
               <p>R$ 33,20</p>
             </SelectedCoffeeFooterLineWrapper>
-            <ConfirmOrderButton to={"/success"}>Confirmar Pedido</ConfirmOrderButton>
+            <ConfirmOrderButton to={"/success"}>
+              Confirmar Pedido
+            </ConfirmOrderButton>
           </SelectedCoffeeFooter>
         </SelectedCoffeeCard>
       </SelectedCoffeeWrapper>

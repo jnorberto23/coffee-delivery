@@ -4,13 +4,15 @@ type CoffeeType = {
   name: string;
   price: number;
   amount: number;
+  image: string;
 };
 
 interface ContextInterface {
   coffees: CoffeeType[];
   total: number;
   count: number;
-  addCoffeeToCart: (coffee: CoffeeType) => void;
+  handleAddCoffeeToCart: (coffee: CoffeeType) => void;
+  handleUpdateCoffeeAmount: (coffee: CoffeeType) => void;
   removeCoffeeFromCart: () => void;
 }
 
@@ -24,28 +26,45 @@ export function SelectedCoffeesContextProvider({
   children,
 }: SelectedCoffeesContextProviderProps) {
   const [coffees, setCoffees] = useState<CoffeeType[]>([]);
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  function addCoffeeToCart(coffee: CoffeeType):void {
-    const found = coffees.find(element => element.id === coffee.id);
-   
-    if(found){
-      const index = coffees.indexOf(found)
-      const newCoffees = coffees;
-      newCoffees[index].amount += coffee.amount
-      setCoffees(newCoffees)
-      setCount(coffee.amount + count)
+  function handleAddCoffeeToCart(coffee: CoffeeType): void {
+    const coffeeFound = coffees.find((element) => element.id === coffee.id);
+    console.log('coffeeFound', coffeeFound)
+    if (coffeeFound) {
+      handleUpdateCoffeeAmount(coffeeFound);
+      handleUpdateCounter();
     }
-    else{
-      setCoffees([...coffees, coffee])
-    }
+
+    setCoffees([...coffees, coffee]);
+
+  }
+
+  function handleUpdateCoffeeAmount(coffeeFound: CoffeeType): void {
+    console.log('caiu aqui com o valor de ', coffeeFound)
+  
+    setCoffees(coffees.map((coffee) => {
+      if(coffee.id === coffeeFound.id){
+        console.log('id igual')
+        return {...coffee, amount: coffeeFound.amount}
+      }
+
+      return coffee
+    
+    }))
   }
 
   useEffect(() => {
-    coffees.forEach((element) => {
-      setCount(element.amount + count)
-    })
-  }, [coffees])
+    console.log('coffeess', coffees)
+    handleUpdateCounter();
+  }, [coffees]);
+
+  function handleUpdateCounter() {
+    const counter = coffees.reduce((acc, current) => {
+      return (acc = acc + current.amount);
+    }, 0);
+    setCount(counter);
+  }
 
   return (
     <SelectedCoffeesContext.Provider
@@ -53,9 +72,9 @@ export function SelectedCoffeesContextProvider({
         coffees,
         total: 0,
         count,
-        addCoffeeToCart,
-        removeCoffeeFromCart: () => {}
-
+        handleAddCoffeeToCart,
+        handleUpdateCoffeeAmount,
+        removeCoffeeFromCart: () => {},
       }}
     >
       {children}

@@ -12,6 +12,10 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const BrandButton = styled(Link)`
+
+`
 export const RegionAndCartContainer = styled.div`
   gap: 0.8rem;
   display: flex;

@@ -14,24 +14,53 @@ import {
   RemoveButton,
   CounterAndRemoveButtonWrapper,
 } from "./styles";
+import { useContext, useEffect, useState } from "react";
+import { SelectedCoffeesContext } from "../../../../context/SelectedCoffeesContext";
 
-export function CoffeeSelected() {
+type PropsType = {
+  id: string;
+  name: string;
+  tag?: string[];
+  description?: string;
+  price: number;
+  image: string;
+  amount: number
+};
+
+
+export function CoffeeSelected(props: PropsType) {
+  const { handleUpdateCoffeeAmount } = useContext(SelectedCoffeesContext)
+  const [counter, setCounter] = useState(props.amount);
+
+  function HandleRemoveCounter() {
+    if (counter > 0) {
+      setCounter(counter - 1);
+      handleUpdateCoffeeAmount({...props, amount: counter})
+    }
+  }
+
+  function HandleAddCounter() {
+    setCounter(counter + 1);
+    handleUpdateCoffeeAmount({...props, amount: counter})
+  }
+
+
   return (
     <SelectedCoffeeListItem>
       <ImageAndTextWrapper>
-        <img src={TradicionalExpress} alt="" />
+        <img src={props.image} alt="" />
         <TitleAndContentWrapper>
           <TitleWrapper>
-            <CoffeeNameText>Expresso Tradicional</CoffeeNameText>
-            <CoffeePriceTag>R$ 9,90</CoffeePriceTag>
+            <CoffeeNameText>{props.name}</CoffeeNameText>
+            <CoffeePriceTag>R$ {props.price}</CoffeePriceTag>
           </TitleWrapper>
           <CounterAndRemoveButtonWrapper>
             <CounterWrapper>
-              <CounterButton>
+              <CounterButton onClick={HandleRemoveCounter}>
                 <Minus />
               </CounterButton>
-              <CounterSpan>0</CounterSpan>
-              <CounterButton>
+              <CounterSpan>{counter}</CounterSpan>
+              <CounterButton onClick={HandleAddCounter}>
                 <Plus />
               </CounterButton>
             </CounterWrapper>

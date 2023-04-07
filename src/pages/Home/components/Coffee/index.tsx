@@ -13,7 +13,7 @@ import {
   CoffeeCardTagWrapper,
 } from "./styles";
 import { useContext, useState } from "react";
-import { SelectedCoffeesContext, SelectedCoffeesContextProvider } from "../../../../context/SelectedCoffeesContext";
+import { SelectedCoffeesContext } from "../../../../context/SelectedCoffeesContext";
 
 type PropsType = {
   id: string;
@@ -25,7 +25,7 @@ type PropsType = {
 };
 
 export function CoffeeItem(props: PropsType) {
-  const { addCoffeeToCart } = useContext(SelectedCoffeesContext)
+  const { handleAddCoffeeToCart } = useContext(SelectedCoffeesContext)
   const [counter, setCounter] = useState(0);
 
   function HandleRemoveCounter() {
@@ -39,7 +39,7 @@ export function CoffeeItem(props: PropsType) {
   }
 
   function HandleAddToCart() {
-    addCoffeeToCart({...props, amount: counter})
+    handleAddCoffeeToCart({...props, amount: counter})
   }
   return (
     <CoffeeCard>
