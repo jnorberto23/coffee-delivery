@@ -17,7 +17,6 @@ import { CoffeeItem } from "./components/Coffee";
 
 import { coffeeData } from "../../data/coffeeData";
 
-console.log("data", coffeeData);
 export function Home() {
   return (
     <Fragment>
@@ -69,8 +68,9 @@ export function Home() {
       <CoffeeList>
         {coffeeData.coffees.map((coffee) => {
           return (
-            <div className="coffee-card" key={coffee.id}>
+            <div className="coffee-card"  key={coffee.id}>
               <CoffeeItem
+               key={coffee.id}
                 id={coffee.id}
                 tag={coffee.tag}
                 price={coffee.price}

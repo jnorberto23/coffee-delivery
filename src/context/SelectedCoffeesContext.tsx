@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 type CoffeeType = {
   id: string;
@@ -25,6 +25,7 @@ export function SelectedCoffeesContextProvider({
   children,
 }: SelectedCoffeesContextProviderProps) {
   const [coffees, setCoffees] = useState<CoffeeType[]>([]);
+  const [count, setCount] = useState(0)
 
   function addCoffeeToCart(coffee: CoffeeType):void {
     const found = coffees.find(element => element.id === coffee.id);
@@ -36,16 +37,23 @@ export function SelectedCoffeesContextProvider({
       setCoffees(newCoffees)
     }
     else{
+
       setCoffees([...coffees, coffee])
     }
   }
+
+  useEffect(() => {
+    coffees.forEach((element) => {
+      setCount(element.amount + count)
+    })
+  }, [coffees])
 
   return (
     <SelectedCoffeesContext.Provider
       value={{
         coffees,
         total: 0,
-        count: 0,
+        count,
         addCoffeeToCart,
         removeCoffeeFromCart: () => {}
 

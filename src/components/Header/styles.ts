@@ -37,6 +37,21 @@ export const CartButton = styled(Link)`
   }
 `;
 
+export const CartButtonBadge = styled.div`
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: ${(props) => props.theme["dark-yellow"]};
+  border-radius: 50%;
+  margin-left: -1.3rem;
+  margin-top: -1.8rem;
+  color:  ${(props) => props.theme["white"]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 900;
+`
+
 export const RegionSpan = styled.span`
   display: flex;
   align-items: center;

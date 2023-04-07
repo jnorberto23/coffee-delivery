@@ -25,7 +25,7 @@ type PropsType = {
 };
 
 export function CoffeeItem(props: PropsType) {
-  const { addCoffeeToCart, coffees } = useContext(SelectedCoffeesContext)
+  const { addCoffeeToCart } = useContext(SelectedCoffeesContext)
   const [counter, setCounter] = useState(0);
 
   function HandleRemoveCounter() {
@@ -40,14 +40,13 @@ export function CoffeeItem(props: PropsType) {
 
   function HandleAddToCart() {
     addCoffeeToCart({...props, amount: counter})
-    console.log('coffees', coffees)
   }
   return (
     <CoffeeCard>
       <img src={props.image} alt="" />
       <CoffeeCardTagWrapper>
         {props.tag.map((tag) => (
-          <CoffeeCardTag>{tag}</CoffeeCardTag>
+          <CoffeeCardTag key={tag}>{tag}</CoffeeCardTag>
         ))}
       </CoffeeCardTagWrapper>
       <CoffeeCardMainText>{props.name}</CoffeeCardMainText>
