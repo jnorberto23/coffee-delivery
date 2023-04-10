@@ -19,10 +19,13 @@ import {
   TextWrapper,
   TitleText,
 } from "./styles";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
 export function Checkout() {
-  const { coffees } = useContext(SelectedCoffeesContext);
+  const { coffees, totalPrice } = useContext(SelectedCoffeesContext);
+  const freightPrice = 3.5
+
+
   return (
     <FrameWrapper>
       <AddressAndPaymentWrapper>
@@ -72,15 +75,15 @@ export function Checkout() {
           <SelectedCoffeeFooter>
             <SelectedCoffeeFooterLineWrapper>
               <p>Total de itens</p>
-              <p>R$ 29.70</p>
+              <p>R$ {totalPrice.toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
             <SelectedCoffeeFooterLineWrapper>
               <p>Entrega</p>
-              <p>R$ 3,50</p>
+              <p>R$ {freightPrice.toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
             <SelectedCoffeeFooterLineWrapper>
               <p>Total</p>
-              <p>R$ 33,20</p>
+              <p>R$ {(totalPrice + freightPrice).toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
             <ConfirmOrderButton to={"/success"}>
               Confirmar Pedido

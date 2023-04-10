@@ -9,7 +9,7 @@ type CoffeeType = {
 
 interface ContextInterface {
   coffees: CoffeeType[];
-  total: number;
+  totalPrice: number;
   count: number;
   handleAddCoffeeToCart: (coffee: CoffeeType) => void;
   handleUpdateCoffeeAmount: (coffee: CoffeeType) => void;
@@ -27,7 +27,7 @@ export function SelectedCoffeesContextProvider({
 }: SelectedCoffeesContextProviderProps) {
   let [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [count, setCount] = useState(0);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   function handleAddCoffeeToCart(coffee: CoffeeType): void {
     const coffeeIsAlreadyAdded = coffees.find((element) => element.id === coffee.id);
 
@@ -39,7 +39,6 @@ export function SelectedCoffeesContextProvider({
   }
 
   function handleUpdateCoffeeAmount(coffeeFound: CoffeeType): void {
-
     const updatedCoffees = coffees.map((element) => {
       if(coffeeFound.id === element.id){
         return { ...element, amount: coffeeFound.amount}
@@ -47,26 +46,35 @@ export function SelectedCoffeesContextProvider({
       return element
     })
 
-
     setCoffees(updatedCoffees)
   }
 
   useEffect(() => {
     handleUpdateCounter();
-  }, [coffees, ...coffees.map((element => element.amount))]);
+    handleUpdateTotalPrice()
+  }, [coffees]);
 
   function handleUpdateCounter() {
     const counter = coffees.reduce((acc, current) => {
       return (acc = acc + current.amount);
     }, 0);
+    
     setCount(counter);
   }
 
+  function handleUpdateTotalPrice() {
+    const totalPrice = coffees.reduce((acc, current) => {
+      return (acc = acc + (current.price * current.amount));
+    }, 0);
+    
+    console.log('totalprice', totalPrice)
+    setTotalPrice(totalPrice);
+  }
   return (
     <SelectedCoffeesContext.Provider
       value={{
         coffees,
-        total: 0,
+        totalPrice,
         count,
         handleAddCoffeeToCart,
         handleUpdateCoffeeAmount,

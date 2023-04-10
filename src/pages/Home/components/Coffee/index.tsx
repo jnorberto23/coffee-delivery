@@ -26,7 +26,8 @@ type PropsType = {
 
 export function CoffeeItem(props: PropsType) {
   const { handleAddCoffeeToCart } = useContext(SelectedCoffeesContext)
-  const [counter, setCounter] = useState(0);
+
+  const [counter, setCounter] = useState(0)
 
   function HandleRemoveCounter() {
     if (counter > 0) {
@@ -40,6 +41,7 @@ export function CoffeeItem(props: PropsType) {
 
   function HandleAddToCart() {
     handleAddCoffeeToCart({...props, amount: counter})
+    setCounter(0)
   }
   return (
     <CoffeeCard>
