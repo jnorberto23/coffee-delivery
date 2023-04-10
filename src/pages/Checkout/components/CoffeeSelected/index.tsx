@@ -29,21 +29,22 @@ type PropsType = {
 
 
 export function CoffeeSelected(props: PropsType) {
-  const { handleUpdateCoffeeAmount } = useContext(SelectedCoffeesContext)
+  const { handleAddCoffeeToCart } = useContext(SelectedCoffeesContext)
   const [counter, setCounter] = useState(props.amount);
 
   function HandleRemoveCounter() {
     if (counter > 0) {
       setCounter(counter - 1);
-      handleUpdateCoffeeAmount({...props, amount: counter})
     }
   }
 
   function HandleAddCounter() {
     setCounter(counter + 1);
-    handleUpdateCoffeeAmount({...props, amount: counter})
   }
 
+  useEffect(() => {
+    handleAddCoffeeToCart({...props, amount: counter})
+  }, [counter])
 
   return (
     <SelectedCoffeeListItem>
