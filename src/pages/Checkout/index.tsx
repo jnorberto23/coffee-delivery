@@ -19,12 +19,13 @@ import {
   TextWrapper,
   TitleText,
 } from "./styles";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
 export function Checkout() {
-  const { coffees, totalPrice } = useContext(SelectedCoffeesContext);
+  const { coffees, totalPrice, count} = useContext(SelectedCoffeesContext);
   const freightPrice = 3.5
 
+  const isButtonDisabled = count === 0
 
   return (
     <FrameWrapper>
@@ -85,7 +86,7 @@ export function Checkout() {
               <p>Total</p>
               <p>R$ {(totalPrice + freightPrice).toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
-            <ConfirmOrderButton to={"/success"}>
+            <ConfirmOrderButton to={"/success"} isDisabled={isButtonDisabled}>
               Confirmar Pedido
             </ConfirmOrderButton>
           </SelectedCoffeeFooter>

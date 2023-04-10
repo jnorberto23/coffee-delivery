@@ -29,7 +29,7 @@ type PropsType = {
 
 
 export function CoffeeSelected(props: PropsType) {
-  const { handleAddCoffeeToCart } = useContext(SelectedCoffeesContext)
+  const { handleAddCoffeeToCart, handleRemoveCoffeeFromCart } = useContext(SelectedCoffeesContext)
   const [counter, setCounter] = useState(props.amount);
 
   function HandleRemoveCounter() {
@@ -40,6 +40,10 @@ export function CoffeeSelected(props: PropsType) {
 
   function HandleAddCounter() {
     setCounter(counter + 1);
+  }
+
+  function HandleDeleteCoffee() {
+    handleRemoveCoffeeFromCart(props.id);
   }
 
   useEffect(() => {
@@ -65,7 +69,7 @@ export function CoffeeSelected(props: PropsType) {
                 <Plus />
               </CounterButton>
             </CounterWrapper>
-            <RemoveButton><Trash size={20} />Remover</RemoveButton>
+            <RemoveButton onClick={HandleDeleteCoffee}><Trash size={20} />Remover</RemoveButton>
           </CounterAndRemoveButtonWrapper>
         </TitleAndContentWrapper>
       </ImageAndTextWrapper>

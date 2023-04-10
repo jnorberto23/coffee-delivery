@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useEffect, useRef, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 type CoffeeType = {
   id: string;
   name: string;
@@ -13,7 +13,7 @@ interface ContextInterface {
   count: number;
   handleAddCoffeeToCart: (coffee: CoffeeType) => void;
   handleUpdateCoffeeAmount: (coffee: CoffeeType) => void;
-  removeCoffeeFromCart: () => void;
+  handleRemoveCoffeeFromCart: (id: string) => void;
 }
 
 interface SelectedCoffeesContextProviderProps {
@@ -28,8 +28,11 @@ export function SelectedCoffeesContextProvider({
   let [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [count, setCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+
   function handleAddCoffeeToCart(coffee: CoffeeType): void {
-    const coffeeIsAlreadyAdded = coffees.find((element) => element.id === coffee.id);
+    const coffeeIsAlreadyAdded = coffees.find(
+      (element) => element.id === coffee.id
+    );
 
     if (coffeeIsAlreadyAdded) {
       return handleUpdateCoffeeAmount(coffee);
@@ -40,36 +43,41 @@ export function SelectedCoffeesContextProvider({
 
   function handleUpdateCoffeeAmount(coffeeFound: CoffeeType): void {
     const updatedCoffees = coffees.map((element) => {
-      if(coffeeFound.id === element.id){
-        return { ...element, amount: coffeeFound.amount}
+      if (coffeeFound.id === element.id) {
+        return { ...element, amount: coffeeFound.amount };
       }
-      return element
-    })
+      return element;
+    });
 
-    setCoffees(updatedCoffees)
+    setCoffees(updatedCoffees);
   }
 
-  useEffect(() => {
-    handleUpdateCounter();
-    handleUpdateTotalPrice()
-  }, [coffees]);
+  function handleRemoveCoffeeFromCart(id: string): void {
+    const updatedCoffees = coffees.filter((element) => id !== element.id);
+    setCoffees(updatedCoffees);
+  }
 
-  function handleUpdateCounter() {
+  function updateCounter() {
     const counter = coffees.reduce((acc, current) => {
       return (acc = acc + current.amount);
     }, 0);
-    
+
     setCount(counter);
   }
 
-  function handleUpdateTotalPrice() {
+  function updateTotalPrice() {
     const totalPrice = coffees.reduce((acc, current) => {
-      return (acc = acc + (current.price * current.amount));
+      return (acc = acc + current.price * current.amount);
     }, 0);
-    
-    console.log('totalprice', totalPrice)
+
     setTotalPrice(totalPrice);
   }
+
+  useEffect(() => {
+    updateCounter();
+    updateTotalPrice();
+  }, [coffees]);
+
   return (
     <SelectedCoffeesContext.Provider
       value={{
@@ -78,7 +86,7 @@ export function SelectedCoffeesContextProvider({
         count,
         handleAddCoffeeToCart,
         handleUpdateCoffeeAmount,
-        removeCoffeeFromCart: () => {},
+        handleRemoveCoffeeFromCart,
       }}
     >
       {children}

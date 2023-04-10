@@ -6,6 +6,10 @@ interface SpanProps {
   color: spanVariant;
 }
 
+interface ButtonProps {
+  isDisabled: boolean;
+}
+
 export const FrameWrapper = styled.div`
   margin-top: 2.5rem;
   display: flex;
@@ -162,7 +166,7 @@ export const SelectedCoffeeFooterLineWrapper = styled.div`
   }
 `;
 
-export const ConfirmOrderButton = styled(Link)`
+export const ConfirmOrderButton = styled(Link)<ButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -172,10 +176,16 @@ export const ConfirmOrderButton = styled(Link)`
   margin: auto;
   width: 100%;
   height: 3rem;
-  background-color: ${(props) => props.theme["brand-yellow"]};
+  background-color: ${(props) => props.isDisabled ? props.theme["light-yellow"] :  props.theme["brand-yellow"] };
   border: none;
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
+
   color: ${(props) => props.theme["white"]};
+  pointer-events: ${(props) => props.isDisabled ?'none' : 'visible'};
+
+  a {
+    
+  }
 `;
