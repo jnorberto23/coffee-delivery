@@ -2,11 +2,12 @@ import { useFormContext } from "react-hook-form";
 import {
   AddressFormInput,
   AddressFormItem,
+  AddressFormSelect,
   CityAndStateWrapper,
   NumberAndComplementWrapper,
 } from "./styles";
 
-export function AddressForm() {
+export function AddressForm(props: {handleSubmit: Function}) {
   const { register } = useFormContext();
   const states = [
     "MG",
@@ -39,7 +40,7 @@ export function AddressForm() {
   ];
 
   return (
-    <AddressFormItem>
+    <AddressFormItem onSubmit={props.handleSubmit()}>
       <AddressFormInput placeholder="CEP" id="cep" {...register("cep")} />
       <AddressFormInput
         placeholder="Rua"
@@ -69,11 +70,11 @@ export function AddressForm() {
           id="city"
           {...register("city")}
         />
-        <select placeholder="SP" id="state" {...register("state")}>
+        <AddressFormSelect placeholder="SP" id="state" {...register("state")}>
           {states.map((state) => (
-            <option value={state}></option>
+            <option value={state}>{state}</option>
           ))}
-        </select>
+        </AddressFormSelect>
       </CityAndStateWrapper>
     </AddressFormItem>
   );

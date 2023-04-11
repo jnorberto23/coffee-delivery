@@ -6,14 +6,26 @@ type CoffeeType = {
   amount: number;
   image: string;
 };
+type AddressType = {
+  cep: string;
+  address: string;
+  number: string;
+  complement: string;
+  neighborhood: string;
+  city: string;
+};
 
 interface ContextInterface {
   coffees: CoffeeType[];
   totalPrice: number;
   count: number;
+  paymentForm: string;
+  address: AddressType | undefined;
   handleAddCoffeeToCart: (coffee: CoffeeType) => void;
   handleUpdateCoffeeAmount: (coffee: CoffeeType) => void;
   handleRemoveCoffeeFromCart: (id: string) => void;
+  handleChangePaymentForm: (payment_form: string) => void;
+  handleChangeAddress: (address: AddressType) => void;
 }
 
 interface SelectedCoffeesContextProviderProps {
@@ -28,6 +40,8 @@ export function SelectedCoffeesContextProvider({
   let [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [count, setCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [paymentForm, setPaymentForm] = useState("credit");
+  const [address, setAddress] = useState<AddressType>();
 
   function handleAddCoffeeToCart(coffee: CoffeeType): void {
     const coffeeIsAlreadyAdded = coffees.find(
@@ -57,6 +71,14 @@ export function SelectedCoffeesContextProvider({
     setCoffees(updatedCoffees);
   }
 
+  function handleChangePaymentForm(payment_form: string): void {
+    setPaymentForm(payment_form);
+  }
+
+  function handleChangeAddress(address: AddressType): void {
+      setAddress(address);
+  }
+
   function updateCounter() {
     const counter = coffees.reduce((acc, current) => {
       return (acc = acc + current.amount);
@@ -84,9 +106,13 @@ export function SelectedCoffeesContextProvider({
         coffees,
         totalPrice,
         count,
+        paymentForm,
+        address,
         handleAddCoffeeToCart,
         handleUpdateCoffeeAmount,
         handleRemoveCoffeeFromCart,
+        handleChangePaymentForm,
+        handleChangeAddress,
       }}
     >
       {children}

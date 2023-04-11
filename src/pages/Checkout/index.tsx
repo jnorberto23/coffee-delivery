@@ -2,7 +2,7 @@ import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { CoffeeSelected } from "./components/CoffeeSelected";
 import { AddressForm } from "./components/Form";
 import { PaymentForm } from "./components/PaymentForm";
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import {
   AddressAndPaymentWrapper,
@@ -48,17 +48,19 @@ export function Checkout() {
   const newAddressForm = useForm<newAddressFormData>({
     resolver: zodResolver(newAddressFormValidationSchema),
     defaultValues: {
-      cep: '',
-    address:'',
-    number: '',
-    complement:'',
-    neighborhood:'',
-    city: '',
+      cep: "",
+      address: "",
+      number: "",
+      complement: "",
+      neighborhood: "",
+      city: "",
     },
-  })
+  });
 
-  function handleCreateNewAddress(data: newAddressFormData) {
-    console.log('data' , data)
+  const { handleSubmit } = newAddressForm;
+
+  function handleFormSubmit(data: newAddressFormData) {
+    console.log("data", data);
   }
   return (
     <FrameWrapper>
@@ -74,8 +76,8 @@ export function Checkout() {
               </SubText>
             </TextWrapper>
           </IconAndTextWrapper>
-          <FormProvider  {...newAddressForm} >
-            <AddressForm/>
+          <FormProvider {...newAddressForm}>
+            <AddressForm handleSubmit={handleSubmit} />
           </FormProvider>
         </AddressCard>
         <PaymentCard>
@@ -88,7 +90,7 @@ export function Checkout() {
               </SubText>
             </TextWrapper>
           </IconAndTextWrapper>
-          <PaymentForm/>
+          <PaymentForm />
         </PaymentCard>
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>
@@ -121,7 +123,11 @@ export function Checkout() {
               <p>Total</p>
               <p>R$ {(totalPrice + freightPrice).toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
-            <ConfirmOrderButton  isDisabled={isButtonDisabled}>
+            <ConfirmOrderButton
+              onClick={handleSubmit(handleFormSubmit)}
+              type="submit"
+              isDisabled={isButtonDisabled}
+            >
               Confirmar Pedido
             </ConfirmOrderButton>
           </SelectedCoffeeFooter>

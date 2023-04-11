@@ -16,11 +16,13 @@ export const InputWrapper = styled.div`
 
   label {
     display: inline-block;
-    width: 11.1rem;
+    width: 11.5rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    padding: auto;
+    margin: auto;
     gap: 0.5rem;
     font-size: 0.8rem;
     cursor: pointer;
@@ -34,6 +36,7 @@ export const InputWrapper = styled.div`
   }
 
   input:checked + label {
+    background-color: ${(props) => props.theme["light-purple"]};
     border:1px solid ${(props) => props.theme["brand-purple"]};
     padding: auto;
     margin: auto;
