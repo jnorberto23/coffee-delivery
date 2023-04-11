@@ -166,7 +166,7 @@ export const SelectedCoffeeFooterLineWrapper = styled.div`
   }
 `;
 
-export const ConfirmOrderButton = styled(Link)<ButtonProps>`
+export const ConfirmOrderButton = styled.button<ButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -181,11 +181,6 @@ export const ConfirmOrderButton = styled(Link)<ButtonProps>`
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
-
   color: ${(props) => props.theme["white"]};
   pointer-events: ${(props) => props.isDisabled ?'none' : 'visible'};
-
-  a {
-    
-  }
 `;

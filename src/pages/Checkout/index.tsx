@@ -2,6 +2,8 @@ import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { CoffeeSelected } from "./components/CoffeeSelected";
 import { AddressForm } from "./components/Form";
 import { PaymentForm } from "./components/PaymentForm";
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from "zod";
 import {
   AddressAndPaymentWrapper,
   AddressCard,
@@ -21,12 +23,43 @@ import {
 } from "./styles";
 import { useContext } from "react";
 import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
+import { FormProvider, useForm } from "react-hook-form";
 export function Checkout() {
-  const { coffees, totalPrice, count} = useContext(SelectedCoffeesContext);
-  const freightPrice = 3.5
+  const { coffees, totalPrice, count } = useContext(SelectedCoffeesContext);
+  const freightPrice = 3.5;
 
-  const isButtonDisabled = count === 0
+  const isButtonDisabled = count === 0;
 
+  const newAddressFormValidationSchema = zod.object({
+    cep: zod.string().min(1, "Informe o cep"),
+    address: zod
+      .string()
+      .min(5, "O endereço precisa ter no mínimo 5 caracteres."),
+    number: zod.string().min(1, "O número precisa ter no mínimo 1 caracteres."),
+    complement: zod.string().optional(),
+    neighborhood: zod
+      .string()
+      .min(5, "O bairro precisa ter no mínimo 2 caracteres."),
+    city: zod.string().min(5, "A cidade precisa ter no mínimo 2 caracteres."),
+  });
+
+  type newAddressFormData = zod.infer<typeof newAddressFormValidationSchema>;
+
+  const newAddressForm = useForm<newAddressFormData>({
+    resolver: zodResolver(newAddressFormValidationSchema),
+    defaultValues: {
+      cep: '',
+    address:'',
+    number: '',
+    complement:'',
+    neighborhood:'',
+    city: '',
+    },
+  })
+
+  function handleCreateNewAddress(data: newAddressFormData) {
+    console.log('data' , data)
+  }
   return (
     <FrameWrapper>
       <AddressAndPaymentWrapper>
@@ -41,7 +74,9 @@ export function Checkout() {
               </SubText>
             </TextWrapper>
           </IconAndTextWrapper>
-          <AddressForm />
+          <FormProvider  {...newAddressForm} >
+            <AddressForm/>
+          </FormProvider>
         </AddressCard>
         <PaymentCard>
           <IconAndTextWrapper color="brand-purple">
@@ -53,7 +88,7 @@ export function Checkout() {
               </SubText>
             </TextWrapper>
           </IconAndTextWrapper>
-          <PaymentForm />
+          <PaymentForm/>
         </PaymentCard>
       </AddressAndPaymentWrapper>
       <SelectedCoffeeWrapper>
@@ -86,7 +121,7 @@ export function Checkout() {
               <p>Total</p>
               <p>R$ {(totalPrice + freightPrice).toFixed(2)}</p>
             </SelectedCoffeeFooterLineWrapper>
-            <ConfirmOrderButton to={"/success"} isDisabled={isButtonDisabled}>
+            <ConfirmOrderButton  isDisabled={isButtonDisabled}>
               Confirmar Pedido
             </ConfirmOrderButton>
           </SelectedCoffeeFooter>
