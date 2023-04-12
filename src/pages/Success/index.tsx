@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import {
   ImageWrapper,
   InfoImageWrapper,
@@ -13,7 +13,9 @@ import {
 
 import Illustration from '../../assets/Illustration.png'
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
 export function Success() {
+  const { coffees, totalPrice, count, address, paymentForm} = useContext(SelectedCoffeesContext);
   return (
     <Fragment>
       <Wrapper>
@@ -27,7 +29,7 @@ export function Success() {
               <InfoItemSpan color="brand-purple">
               <MapPin weight="fill"/>
               </InfoItemSpan>
-              <p>Entrega em <b>Rua João Daniel Martinelli, 102</b><br/>Farrapos - Porto Alegre, RS</p>
+              <p>Entrega em <b>{ address?.address}, {address?.number}</b><br/>{address?.neighborhood} - {address?.city}, {address?.state}</p>
             </InfoItem>
             <InfoItem >
               <InfoItemSpan color="brand-yellow">
@@ -40,11 +42,9 @@ export function Success() {
               <InfoItemSpan color="dark-yellow">
               <CurrencyDollar weight="fill"/>
               </InfoItemSpan>
-              <p>Pagamento na entrega<br/><b>Cartão de Crédito</b></p>
-            
+              <p>Pagamento na entrega<br/><b>{paymentForm}</b></p>
             </InfoItem>
           </InfoWrapper>
-          
         <ImageWrapper src={Illustration} alt="" />
         </InfoImageWrapper>
       </Wrapper>

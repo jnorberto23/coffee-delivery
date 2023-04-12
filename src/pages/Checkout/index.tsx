@@ -24,8 +24,11 @@ import {
 import { useContext } from "react";
 import { SelectedCoffeesContext } from "../../context/SelectedCoffeesContext";
 import { FormProvider, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
 export function Checkout() {
-  const { coffees, totalPrice, count } = useContext(SelectedCoffeesContext);
+  const navigate = useNavigate();
+  const { coffees, totalPrice, count, handleChangeAddress } = useContext(SelectedCoffeesContext);
   const freightPrice = 3.5;
 
   const isButtonDisabled = count === 0;
@@ -41,6 +44,7 @@ export function Checkout() {
       .string()
       .min(5, "O bairro precisa ter no mínimo 2 caracteres."),
     city: zod.string().min(5, "A cidade precisa ter no mínimo 2 caracteres."),
+    state: zod.string().min(2, "A cidade precisa ter no mínimo 2 caracteres."),
   });
 
   type newAddressFormData = zod.infer<typeof newAddressFormValidationSchema>;
@@ -54,14 +58,17 @@ export function Checkout() {
       complement: "",
       neighborhood: "",
       city: "",
+      state: ""
     },
   });
 
   const { handleSubmit } = newAddressForm;
 
   function handleFormSubmit(data: newAddressFormData) {
-    console.log("data", data);
+    handleChangeAddress(data)
+    navigate('/success');
   }
+  
   return (
     <FrameWrapper>
       <AddressAndPaymentWrapper>

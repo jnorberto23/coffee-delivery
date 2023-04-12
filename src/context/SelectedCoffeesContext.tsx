@@ -10,9 +10,10 @@ type AddressType = {
   cep: string;
   address: string;
   number: string;
-  complement: string;
+  complement?: string;
   neighborhood: string;
   city: string;
+  state: string;
 };
 
 interface ContextInterface {
@@ -40,7 +41,7 @@ export function SelectedCoffeesContextProvider({
   let [coffees, setCoffees] = useState<CoffeeType[]>([]);
   const [count, setCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [paymentForm, setPaymentForm] = useState("credit");
+  const [paymentForm, setPaymentForm] = useState("Crédito");
   const [address, setAddress] = useState<AddressType>();
 
   function handleAddCoffeeToCart(coffee: CoffeeType): void {
